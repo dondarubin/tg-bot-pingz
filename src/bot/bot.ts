@@ -4,6 +4,7 @@ import {Command} from "./commands/command.class";
 import {StartCommand} from "./commands/start.command";
 import {MessageCommand} from "./commands/message.comand";
 import {HelpCommand} from "./commands/help.command";
+import {IDBUser} from "../db/IDatabase";
 
 export interface IWizardScene extends Scenes.WizardSessionData {
   // available ctx.scene.session.myWizardSceneProp
@@ -62,5 +63,14 @@ export class Bot {
     } catch (err: any) {
       console.log(`Bot start error ❌: \n ${err.toString()}`);
     }
+  }
+
+  public async answerWebAppQuery(queryId: string, data: Partial<IDBUser>) {
+    await this.bot.telegram.answerWebAppQuery(queryId, {
+      type: "article",
+      id: queryId,
+      title: "123",
+      input_message_content: {message_text: "pizdec"}
+    })
   }
 }

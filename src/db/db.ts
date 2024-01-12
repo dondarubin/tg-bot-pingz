@@ -15,11 +15,19 @@ export class PG implements IDatabase {
 
   public async createNewUser(user: IDBUser) {
     await this.db`
-        INSERT INTO Users (tg_id, name, surname, age, gender)
+        INSERT INTO Users (tg_id,
+                           user_name,
+                           user_surname,
+                           user_age,
+                           user_gender,
+                           user_social_networks,
+                           user_city)
         values (${user.tgId},
                 ${user.name},
                 ${user.surname},
                 ${user.age},
-                ${user.gender ? "М" : "Ж"})`
+                ${user.gender ? "М" : "Ж"},
+                ${user.social_networks ? user.social_networks : null},
+                ${user.city})`
   }
 }

@@ -4,6 +4,8 @@ export interface IDBUser {
   surname: string
   age: number
   gender: boolean
+  social_networks?: string
+  city: string
 }
 
 export interface IDatabase {
