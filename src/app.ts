@@ -20,19 +20,27 @@ app.listen(configService.get("EXPRESS_PORT"), () =>
 )
 
 app.post('/web-data', async (req, res) => {
-  const dbUser: IDBUser = req.body
-  console.log(dbUser)
+  const userData: IDBUser = req.body
+  console.log(userData)
 
-  db.createNewUser(dbUser)
+  db.createNewUser(userData)
   .then(() => {
-    console.log("user создан!!!!")
+    console.log("Пользователь создан!")
     return res.status(200).json({})
   })
   .catch((err) => {
-    console.log(`ошибка при создании пользователя: ${err}`)
+    console.log(`Ошибка при создании пользователя: ${err}`)
     return res.status(500).json({})
   })
-  
+
+  db.addUserInterests(userData).then(() => {
+    console.log("Интерес добавлен!")
+    return res.status(200).json({})
+  })
+  .catch((err) => {
+    console.log(`Ошибка при добавлении интереса: ${err}`)
+    return res.status(500).json({})
+  })
 })
 
 bot.init()

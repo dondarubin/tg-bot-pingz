@@ -7,7 +7,6 @@ const configService = new EnvironmentService()
 export const markupsList = {
   start: Markup.inlineKeyboard([
     Markup.button.webApp(botPhrasesList.questionnaire, configService.get("WEB_APP_URL")),
-    Markup.button.webApp(botPhrasesList.somePage, configService.get("WEB_APP_SOME")),
   ]),
 
   clear: Markup.removeKeyboard()
