@@ -1,48 +1,108 @@
-insert into interests(interest_name) values ('Готовка');
-insert into interests(interest_name) values ('Чтение');
-insert into interests(interest_name) values ('Путешествия');
-insert into interests(interest_name) values ('Фотография');
-insert into interests(interest_name) values ('Горные лыжи');
-insert into interests(interest_name) values ('Велосипедные прогулки');
-insert into interests(interest_name) values ('Рыбалка');
-insert into interests(interest_name) values ('Пение');
-insert into interests(interest_name) values ('Рисование');
-insert into interests(interest_name) values ('Флористика');
-insert into interests(interest_name) values ('Вязание');
-insert into interests(interest_name) values ('Гонки на дронах');
-insert into interests(interest_name) values ('Скалолазание');
-insert into interests(interest_name) values ('Комиксы и графические романы');
-insert into interests(interest_name) values ('Плавание');
-insert into interests(interest_name) values ('Театр');
-insert into interests(interest_name) values ('Скульптура');
-insert into interests(interest_name) values ('Виноделие');
-insert into interests(interest_name) values ('Путешествия на кемпере');
-insert into interests(interest_name) values ('Садоводство');
-insert into interests(interest_name) values ('Музыкальное производство');
-insert into interests(interest_name) values ('Водные виды спорта (серфинг, вейкбординг)');
-insert into interests(interest_name) values ('Йога');
-insert into interests(interest_name) values ('Астрономия');
-insert into interests(interest_name) values ('Психология');
-insert into interests(interest_name) values ('Аквариумистика');
-insert into interests(interest_name) values ('Ботаника');
-insert into interests(interest_name) values ('Геокешинг');
-insert into interests(interest_name) values ('Реставрация мебели');
-insert into interests(interest_name) values ('Граффити');
-insert into interests(interest_name) values ('Фехтование');
-insert into interests(interest_name) values ('Гольф');
-insert into interests(interest_name) values ('Исследование дикой природы');
-insert into interests(interest_name) values ('Астрофотография');
-insert into interests(interest_name) values ('Собирание монет');
-insert into interests(interest_name) values ('Танцы');
-insert into interests(interest_name) values ('Футбол');
-insert into interests(interest_name) values ('Часы и механизмы');
-insert into interests(interest_name) values ('Моделирование (самолеты, корабли и др.)');
-insert into interests(interest_name) values ('Бег');
-insert into interests(interest_name) values ('Фехтование');
-insert into interests(interest_name) values ('Верховая езда');
-insert into interests(interest_name) values ('Самосовершенствование');
-insert into interests(interest_name) values ('Спортивный туризм');
-insert into interests(interest_name) values ('Походы в горы');
-insert into interests(interest_name) values ('Настольные игры');
-insert into interests(interest_name) values ('Ролевые игры (D&D и др.)');
-insert into interests(interest_name) values ('Компьютерные игры');
+insert into interests(interest_name)
+select *
+from unnest(array [
+--     business
+    'Электронная коммерция',
+    'B2B-продажи',
+    'Менеджмент',
+    'SMM',
+    'Маркетинговая стратегия',
+    'Performance-маркетинг',
+    'PR',
+    'Digital-маркетинг',
+
+--     startup
+    'Metaverse',
+    'VR/AR',
+    'Blockchain',
+    'Crypto',
+    'NFT',
+    'Мобильная разработка',
+    'Frontend разработка',
+    'Backend разработка',
+    'Product management',
+    'Искусственный интеллект',
+    'Data science',
+    'Дизайн',
+
+--     finance
+    'P&L',
+    'Финансовое моделирование',
+    'Венчурные инвестиции',
+    'Экономика',
+    'Финтех',
+    'Недвижимость',
+
+--     hobby
+    'Теннис',
+    'Кино',
+    'Рыбалка',
+    'Путешествия',
+    'Научпоп',
+    'Фитнес',
+    'Игры',
+    'Музыка',
+    'Шахматы',
+    'Покер',
+    'Чтение',
+    'Фотография',
+    'Кулинария',
+    'Искусство',
+    'История',
+    'Политика',
+    'Психология',
+    'Консалтинг',
+    'Ментальное здоровье',
+    'Коучинг',
+    'Образование',
+    'Биохакинг',
+    'HR / Рекрутинг',
+    'Готовка',
+    'Чтение',
+    'Путешествия',
+    'Фотография',
+    'Горные лыжи',
+    'Велосипедные прогулки',
+    'Рыбалка',
+    'Пение',
+    'Рисование',
+    'Флористика',
+    'Вязание',
+    'Гонки на дронах',
+    'Скалолазание',
+    'Комиксы и графические романы',
+    'Плавание',
+    'Театр',
+    'Скульптура',
+    'Виноделие',
+    'Путешествия на кемпере',
+    'Садоводство',
+    'Музыкальное производство',
+    'Водные виды спорта (серфинг, вейкбординг)',
+    'Йога',
+    'Астрономия',
+    'Психология',
+    'Аквариумистика',
+    'Ботаника',
+    'Геокешинг',
+    'Реставрация мебели',
+    'Граффити',
+    'Фехтование',
+    'Гольф',
+    'Исследование дикой природы',
+    'Астрофотография',
+    'Собирание монет',
+    'Танцы',
+    'Футбол',
+    'Часы и механизмы',
+    'Моделирование (самолеты, корабли и др.)',
+    'Бег',
+    'Фехтование',
+    'Верховая езда',
+    'Самосовершенствование',
+    'Спортивный туризм',
+    'Походы в горы',
+    'Настольные игры',
+    'Ролевые игры (D&D и др.)',
+    'Компьютерные игры'
+    ]);

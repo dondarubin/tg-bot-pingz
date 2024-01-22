@@ -27,18 +27,18 @@ export class PG implements IDatabase {
                            description,
                            useful,
                            meeting_preferences)
-        values (${user.tgId},
+        values (${user.tgUserId},
                 ${user.name},
                 ${user.surname},
                 ${user.age},
                 ${user.gender ? "М" : "Ж"},
-                ${user.social_networks ? user.social_networks : null},
+                ${user.socialNetworks ? user.socialNetworks : null},
                 ${user.city},
                 ${user.profession},
                 ${user.experience},
                 ${user.description},
                 ${user.useful},
-                ${user.meeting_preferences ? user.meeting_preferences : null})`
+                ${user.meetingPreferences ? user.meetingPreferences : null})`
   }
 
   public async addUserInterests(user: IDBUser) {
@@ -47,14 +47,9 @@ export class PG implements IDatabase {
         SELECT u.user_id, i.interest_id
         FROM Users u,
              interests i
-        WHERE u.tg_id = ${user.tgId}
+        WHERE u.tg_id = ${user.tgUserId}
           AND i.interest_name IN ${this.db(user.listInterests)}
     `
   }
 }
 
-// WHERE interest_name in ${this.db(user.listInterests)}
-
-// SELECT interest_id
-// FROM interests
-// WHERE interest_name in ${this.db(interestList)}

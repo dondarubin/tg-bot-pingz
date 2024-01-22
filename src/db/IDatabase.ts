@@ -1,18 +1,16 @@
-import {Row, RowList} from "postgres";
-
 export interface IDBUser {
-  tgId: number
+  tgUserId: number
   name: string
   surname: string
   age: number
   gender: boolean,
-  social_networks?: string
+  socialNetworks?: string
   city: string
   profession: string,
   experience: string,
   description: string,
   useful: string,
-  meeting_preferences?: string
+  meetingPreferences?: string
   listInterests: string[]
 }
 
